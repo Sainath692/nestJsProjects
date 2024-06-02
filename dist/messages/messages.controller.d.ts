@@ -1,6 +1,9 @@
-import { CreateMessageDto } from './dtos/create-message.dto';
+import { CreateMessageDto } from "./dtos/create-message.dto";
+import { MessagesService } from "./messages.service";
 export declare class MessagesController {
-    listMessages(): void;
-    createMessages(body: CreateMessageDto): void;
-    getMessages(id: number): void;
+    messsagesSerivce: MessagesService;
+    constructor(messsagesSerivce: MessagesService);
+    listMessages(): Promise<any>;
+    createMessage(body: CreateMessageDto): Promise<void>;
+    getMessages(id: string): Promise<any>;
 }
